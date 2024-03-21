@@ -1,0 +1,30 @@
+ @tailwind base;
+ @tailwind components;
+ @tailwind utilities;
+
+ html,body{
+    overflow-x: hidden;
+ }
+
+ 
+ .gradient_bg {
+   background-color:#060F1E ;
+   /* border-top: 2px solid gray;
+   border-left:2px solid gray ; */
+   background: linear-gradient(#060F1E, #060F1E) 50% 50%/calc(100% - 6px) calc(100% - 6px) no-repeat,
+            linear-gradient(140deg, #48abe0 0%, #060f1e 42%);
+   box-sizing: border-box;
+ }
+
+ .homepage_bg{
+  background: url("../src/assets/Images/bghome.svg");
+ }
+ .box_shadow{
+  box-shadow: 15px 15px white;
+ }
+ .box_shadow_invert{
+  box-shadow: -15px -15px white;
+ }
+ .box_shadow_gr{
+  box-shadow: 1px 5px 36px -7px rgba(49,145,145,0.82);
+ }
