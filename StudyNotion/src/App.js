@@ -90,7 +90,7 @@ function App() {
           }
         />
 
-        <Route path="dashboard/my-profile" element={<Myprofile/>}/>
+        {/* <Route path="dashboard/my-profile" element={<Myprofile/>}/> */}
         
       </Routes>
     </div>
