@@ -10,9 +10,10 @@ import UpdatePassword from "./pages/UpdatePassword";
 import VerifyEmail from "./pages/VerifyEmail";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import MyProfile from "./components/core/Dashboard/MyProfile";
 function App() {
   return (
-    <div className="w-screen min-h-screen bg-richblack-900 flex flex-col font-inter">
+    <div className="w-screen min-h-screen bg-richblack-50 flex flex-col font-inter">
       <Navbar />
       <Routes>
 
@@ -90,7 +91,7 @@ function App() {
           }
         />
 
-        {/* <Route path="dashboard/my-profile" element={<Myprofile/>}/> */}
+        <Route path="dashboard/my-profile" element={<MyProfile/>}/>
         
       </Routes>
     </div>
