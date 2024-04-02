@@ -13,7 +13,7 @@ import Contact from "./pages/Contact";
 import MyProfile from "./components/core/Dashboard/MyProfile";
 function App() {
   return (
-    <div className="w-screen min-h-screen bg-richblack-50 flex flex-col font-inter">
+    <div className="w-screen min-h-screen bg-richblack-800 flex flex-col font-inter">
       <Navbar />
       <Routes>
 

@@ -21,6 +21,7 @@ const MyProfile = () => {
           <img
             src={user?.image}
             alt={`profile-${user?.firstName}`}
+            className='w-10 rounded-3xl'
             
           />
           <div  >
