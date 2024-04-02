@@ -11,6 +11,8 @@ import VerifyEmail from "./pages/VerifyEmail";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import MyProfile from "./components/core/Dashboard/MyProfile";
+import Dashboard from "./pages/Dashboard"
+import PrivateRoute from "./components/core/Auth/PrivateRoute";
 function App() {
   return (
     <div className="w-screen min-h-screen bg-richblack-800 flex flex-col font-inter">
@@ -90,6 +92,15 @@ function App() {
             </OpenRoute>
           }
         />
+
+        <Route
+        element={
+          <PrivateRoute>
+            <Dashboard/>
+          </PrivateRoute>
+        }
+        />  
+         
 
         <Route path="dashboard/my-profile" element={<MyProfile/>}/>
         
