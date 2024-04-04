@@ -117,7 +117,7 @@ export function login(email, password, navigate) {
       
       localStorage.setItem("user", JSON.stringify(response.data.user))
       navigate("/dashboard/my-profile")
-      console.log("error in fdashboard")
+      
 
 
     } catch (error) {
