@@ -4,6 +4,7 @@ import { toast } from "react-hot-toast"
  import { apiConnector } from "../apiconnector"
  
  import { courseEndpoints } from "../api"
+  
 
 const {
   COURSE_DETAILS_API,
@@ -110,10 +111,12 @@ export const editCourseDetails = async (data, token) => {
   let result = null
   const toastId = toast.loading("Loading...")
   try {
+   
     const response = await apiConnector("POST", EDIT_COURSE_API, data, {
       "Content-Type": "multipart/form-data",
       Authorisation: `Bearer ${token}`,
     })
+     
     console.log("EDIT COURSE API RESPONSE............", response)
     if (!response?.data?.success) {
       throw new Error("Could Not Update Course Details")
@@ -127,6 +130,7 @@ export const editCourseDetails = async (data, token) => {
   toast.dismiss(toastId)
   return result
 }
+
 
 // create a section
 export const createSection = async (data, token) => {
