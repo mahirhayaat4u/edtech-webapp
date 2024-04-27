@@ -11,8 +11,7 @@ import {
   fetchCourseCategories,
 } from "../../../../../services/operations/courseDetailsAPI"
 import { setCourse, setStep } from "../../../../../slices/courseSlice"
-import {COURSE_STATUS} from "../../../../../utils/constant"
-// import IconBtn from "../../../../Common/IconBtn"
+import { COURSE_STATUS } from "../../../../../utils/constant"
 import IconBtn from "../../../../common/IconBtn"
 import Upload from "../Upload"
 import ChipInput from "./ChipInput"
@@ -159,7 +158,7 @@ export default function CourseInformationForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="space-y-8 rounded-md border-[1px] border-richblack-700 bg-richblack-800 p-6 text-richblack-900"
+      className="space-y-8 rounded-md border-[1px] border-richblack-700 bg-richblack-800 p-6"
     >
       {/* Course Title */}
       <div className="flex flex-col space-y-2">
@@ -178,8 +177,6 @@ export default function CourseInformationForm() {
           </span>
         )}
       </div>
-
-
       {/* Course Short Description */}
       <div className="flex flex-col space-y-2">
         <label className="text-sm text-richblack-5" htmlFor="courseShortDesc">
@@ -198,8 +195,6 @@ export default function CourseInformationForm() {
         )}
       </div>
       {/* Course Price */}
-
-
       <div className="flex flex-col space-y-2">
         <label className="text-sm text-richblack-5" htmlFor="coursePrice">
           Course Price <sup className="text-pink-200">*</sup>
@@ -226,8 +221,7 @@ export default function CourseInformationForm() {
         )}
       </div>
       {/* Course Category */}
-
-       {/* <div className="flex flex-col space-y-2">
+      <div className="flex flex-col space-y-2">
         <label className="text-sm text-richblack-5" htmlFor="courseCategory">
           Course Category <sup className="text-pink-200">*</sup>
         </label>
@@ -252,7 +246,7 @@ export default function CourseInformationForm() {
             Course Category is required
           </span>
         )}
-      </div>  */}
+      </div>
       {/* Course Tags */}
       <ChipInput
         label="Tags"

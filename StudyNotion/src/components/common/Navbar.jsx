@@ -14,24 +14,7 @@ import { ACCOUNT_TYPE } from "../../utils/constant"
 // import ProfileDropdown from "../core/Auth/ProfileDropdown"
 import ProfileDropdown from "../core/Auth/ProfileDropDown"
 
-// const subLinks = [
-//   {
-//     title: "Python",
-//     link: "/catalog/python",
-//   },
-//   {
-//     title: "javascript",
-//     link: "/catalog/javascript",
-//   },
-//   {
-//     title: "web-development",
-//     link: "/catalog/web-development",
-//   },
-//   {
-//     title: "Android Development",
-//     link: "/catalog/Android Development",
-//   },
-// ];
+ 
 
 function Navbar() {
   const { token } = useSelector((state) => state.auth)
@@ -46,8 +29,11 @@ function Navbar() {
     ;(async () => {
       setLoading(true)
       try {
+        // console.log("before printing categori")
         const res = await apiConnector("GET", categories.CATEGORIES_API)
         setSubLinks(res.data.data)
+        // console.log("sublinks length",subLinks)
+
       } catch (error) {
         console.log("Could not fetch Categories.", error)
       }
@@ -92,13 +78,11 @@ function Navbar() {
                         <div className="absolute left-[50%] top-0 -z-10 h-6 w-6 translate-x-[80%] translate-y-[-40%] rotate-45 select-none rounded bg-richblack-5"></div>
                         {loading ? (
                           <p className="text-center">Loading...</p>
-                        ) : subLinks.length ? (
+                        ) : subLinks.length   ? (
                           <>
-                            {subLinks
-                              ?.filter(
-                                (subLink) => subLink?.courses?.length > 0
-                              )
-                              ?.map((subLink, i) => (
+                            { subLinks.map((subLink, i) => (
+                             // {/* subLinks?.filter( (subLink) => subLink?.courses?.length > 0 )?.map((subLink, i) => ( */}
+                               //filter is not working here
                                 <Link
                                   to={`/catalog/${subLink.name
                                     .split(" ")

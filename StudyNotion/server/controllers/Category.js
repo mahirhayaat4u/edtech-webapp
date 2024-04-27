@@ -69,6 +69,19 @@ exports.categoryPageDetails = async (req, res) => {
 
             //get top 10 selling courses
             //HW - write it on your own
+            const allCategories = await Category.find()
+            .populate({
+              path: "courses",
+              match: { status: "Published" },
+              populate: {
+                path: "instructor",
+            },
+            })
+            .exec()
+          const allCourses = allCategories.flatMap((category) => category.courses)
+          const mostSellingCourses = allCourses
+            .sort((a, b) => b.sold - a.sold)
+            .slice(0, 10)
 
             //return response
             return res.status(200).json({
@@ -76,6 +89,7 @@ exports.categoryPageDetails = async (req, res) => {
                 data: {
                     selectedCategory,
                     differentCategories,
+                    mostSellingCourses,
                 },
             });
 

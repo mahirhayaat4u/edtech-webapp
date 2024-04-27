@@ -17,7 +17,7 @@ const {
         try {
             const response=await apiConnector("PUT",UPDATE_DISPLAY_PICTURE_API,formData,{
                 "Content-Type": "multipart/form-data",
-                Authorization: `Bearer ${token}`,
+                Authorisation: `Bearer ${token}`,
             })
 
             console.log(
@@ -50,7 +50,7 @@ const {
       const toastId = toast.loading("Loading...")
       try {
         const response = await apiConnector("PUT", UPDATE_PROFILE_API, formData, {
-          Authorization: `Bearer ${token}`,
+          Authorisation: `Bearer ${token}`,
         })
         console.log("UPDATE_PROFILE_API API RESPONSE............", response)
   
@@ -78,7 +78,7 @@ const {
     const toastId = toast.loading("Loading...")
     try {
       const response = await apiConnector("POST", CHANGE_PASSWORD_API, formData, {
-        Authorization: `Bearer ${token}`,
+        Authorisation: `Bearer ${token}`,
       })
       console.log("CHANGE_PASSWORD_API API RESPONSE............", response)
   
@@ -101,7 +101,7 @@ const {
       const toastId = toast.loading("Loading...")
       try {
         const response = await apiConnector("DELETE", DELETE_PROFILE_API, null, {
-          Authorization: `Bearer ${token}`,
+          Authorisation: `Bearer ${token}`,
         })
         console.log("DELETE_PROFILE_API API RESPONSE............", response)
   
